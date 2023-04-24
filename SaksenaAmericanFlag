@@ -1,0 +1,83 @@
+from turtle import *
+setup(800,500)
+speed(0) 
+
+#draw red stripes
+stripe_x=-400
+stripe_y=250
+
+def stripe():
+    color("red")
+    begin_fill()
+    for i in range(2):
+        forward(800)
+        right(90)
+        forward(38)
+        right(90)
+    end_fill()
+for i in range(7):
+    penup()
+    goto(stripe_x,stripe_y)
+    pendown()
+    stripe()
+    stripe_y=stripe_y-76
+    
+#draw blue rectangle
+penup()
+goto(-400,250)
+pendown()
+color('blue')
+begin_fill()
+for i in range(2):
+    forward(350)
+    right(90)
+    forward(266)
+    right(90)
+end_fill()
+
+#draw stars in lines
+def star():
+    color('white')
+    begin_fill()
+    for i in range(5):
+        forward(20)
+        right(144)
+    end_fill()
+    
+x1=-380
+y1=230
+
+x2=-350
+y2=205
+
+def row1():
+    global x1
+    global y1
+    for i in range(6):
+        penup()
+        goto(x1,y1)
+        pendown()
+        star()
+        x1=x1+57
+        
+for j in range(5):
+    row1()
+    x1=-380
+    y1=y1-52
+    
+def row2():
+    global x2
+    global y2
+    for j in range(5):
+        penup()
+        goto(x2,y2)
+        pendown()
+        star()
+        x2=x2+57
+        
+for j in range(4):
+    row2()
+    x2=-350
+    y2=y2-51
+
+hideturtle()
