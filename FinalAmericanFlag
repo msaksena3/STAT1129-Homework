@@ -81,3 +81,19 @@ for j in range(4):
     y2=y2-51
 
 hideturtle()
+
+def main():
+    turtle.setup(800, 600)
+    turtle.title("American Flag")
+    turtle.bgcolor("white")
+    turtle.hideturtle()
+    turtle.speed(0)
+    
+    # Draw the American flag with a specified height
+    flag_height = 200
+    draw_american_flag(flag_height)
+    
+    turtle.exitonclick()
+
+if __name__ == "__main__":
+    main()
