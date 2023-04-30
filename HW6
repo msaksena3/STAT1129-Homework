@@ -1,0 +1,37 @@
+mat1 <- matrix(c(7, 9, 12, 2, 4, 13), nrow = 2, byrow = TRUE)
+print(mat1)
+
+mat2 <- matrix(c(1, 7, 12, 19, 2, 8, 13, 20, 3, 9, 14, 21), nrow = 3, byrow = TRUE)
+print(mat2)
+
+total <- (mat1) %*% (mat2)
+print(total)
+
+df <- data.frame(
+  Id = c(1, 2, 3, 4, 5),
+  Name = c("Peter", "Amy", "Ryan", "Gary", "Michelle"),
+  Salary = c(623.30, 515.20, 611.00, 729.00, 843.25)
+)
+df
+
+df$Department <- c("HR", "Sales", "Customer Service", "Finance", "IT")
+df
+
+df2 <- df[c(1,3,5),c(2,3)]
+df2
+
+df_subset <- df[c(1, 4, 5), ]
+barplot(df_subset$Salary, 
+        names.arg = df_subset$Name, 
+        xlab = "Name", 
+        ylab = "Salary", 
+        main = "Salary of Employees",
+        col = "blue")
+        
+        highest <- max(df$Salary)
+lowest <- min(df$Salary)
+median <- median(df$Salary)
+
+values <- c(highest, lowest, median)
+labels <- c("Highest Salary", "Lowest Salary", "Median Salary")
+pie(values, labels = labels, main = "Salary Distribution", col = c("blue", "orange", "red"))
